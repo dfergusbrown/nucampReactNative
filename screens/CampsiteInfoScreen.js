@@ -3,7 +3,7 @@ import { Button, Modal, FlatList, StyleSheet, Text, View } from 'react-native'
 import RenderCampsite from '../features/campsites/RenderCampsites';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleFavorite } from '../features/favorites/favoritesSlice';
-import { Input, Rating } from 'react-native-elements';
+import { Divider, Input, Rating } from 'react-native-elements';
 import { postComment } from '../features/comments/commentsSlice';
 
 
@@ -79,6 +79,7 @@ const CampsiteInfoScreen = ({ route }) => {
                             onShowModal = {() => setShowModal(!showModal)}
                         />
                         <Text style={styles.commentsTitle}>Comments</Text>
+                        <Divider style={{ alignSelf: "center", width: "90%" }} />
                     </>
                 }
             />
@@ -140,7 +141,7 @@ const CampsiteInfoScreen = ({ route }) => {
 const styles = StyleSheet.create({
     commentsTitle: {
         textAlign: 'center',
-        backgroundcolor: '#fff',
+        backgroundColor: '#fff',
         fontSize: 16,
         fontWeight: 'bold',
         color: '#43484D',
